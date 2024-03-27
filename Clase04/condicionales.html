@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I</title>
+</head>
+<body>
+    <h1>Operadores</h1>
+    <script>
+        /*  Solicitar al usuario el ingreso del nombre y de su categoría de la escuela (docente, alumno o administrativo). Luego muestre un mensaje con el texto del tipo: Hola Juan, sos “categoría” o Categoría inexistente si se ingresa una categoría no válida.
+        */
+       let nombre = prompt('Ingrese su nombre');
+       let categoria = prompt('Ingrese la categoría');
+    
+       if( categoria == 'docente'){  // Si
+            console.log('Hola ' + nombre + ' Sos Docente');
+
+       } else if (categoria == 'alumno') { // Si no
+            console.log('Hola ' + nombre + ' Sos Alumno');
+        
+       } else if ( categoria == 'administrativo' ){
+            console.log('Hola ' + nombre + ' Sos Administrativo');
+
+       } else { // Si fallan todas las condicionales
+            console.log('Categoría inexistente')
+       }
+
+
+
+/*         if( categoria == 'docente' ){
+            console.log('Hola ' + nombre + ' Sos Docente');
+        } else { // Si no es docente, verifico si es alumano
+            // Ifs Anidados
+            if( categoria == 'alumno'){
+                console.log('Hola ' + nombre + ' Sos Docente');
+            } else { // Si no es alumno, verifico si es administrativo
+                if( categoria == 'administrativo'){
+                    console.log('Hola ' + nombre + ' Sos Administrativo');
+                } else {  // Si no es docente, si no es alumno, si no es administrativo
+                    console.log('Categoría inexistente')
+
+                }
+            }
+        } */
+
+    </script>
+</body>
+</html>
