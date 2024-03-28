@@ -8,7 +8,7 @@
     EJ 
     4 % 2 ->  0
     5 % 2 ->  1
-     
+
  = asignación 
  == comparación    3 == 4
  <  Menor que
@@ -25,3 +25,8 @@
 2. Solicitar la cantidad de pesos y guardarlo en una variable
 3. Realizo el calculo de equivalencia
 4. Muestro la equivalencia de pesos a dolares
+
+
+# Operadores Booleanos (Operadores Lógicos)
+- Y AND  &&
+- O OR   ||
