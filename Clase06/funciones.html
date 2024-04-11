@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I</title>
+</head>
+<body>
+    <h1>Funciones</h1>
+    <button type="button" onclick="saludar();"> Hacer Click</button>
+
+    <script>
+        let nombre = 'Sofia';           // Variable Global
+
+        // Declaración de la función
+        function saludar() {
+            let nombre = 'Marcos';
+            let materia = 'Programación I'; // Variable Local
+            console.log('Hola ' + nombre + ' estas en la materia ' + materia); 
+        }
+        // Llamo a la función
+        saludar();
+        console.log(nombre); // Muestro la variable Global
+        console.log(materia); // ❌ Error por llamar a una variable local
+
+    </script>
+</body>
+</html>
