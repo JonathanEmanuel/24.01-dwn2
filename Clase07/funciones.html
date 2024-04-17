@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Funciones</h1>
+    <script>
+        let nombre;
+        let nota;
+        let continuar;
+
+        function crearItem( nombre, n ){
+            let estado;
+            if( n >= 7){
+                estado = 'Aprobado ✅';
+            } else {
+                estado = 'Desaprobado ❌';
+            }
+            console.log('| ' + nombre + ' | ' + n + ' | ');
+            document.write('<p>' +  nombre + ' | ' + n + ' | ' + estado + '</p>');
+        }
+
+        do {
+            nombre = prompt('Ingrese el nombre');
+            nota = +prompt('Ingrese la nota');
+            crearItem(nombre, nota);
+            continuar = confirm('¿Seguir ingresando alumnos?');
+        } while ( continuar == true )
+
+    </script>
+</body>
+</html>
