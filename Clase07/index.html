@@ -7,7 +7,62 @@
 </head>
 <body>
     <header>
-        <h1> Arreglos</h1>
-    </header>    
+        <h1> Funciones</h1>
+    </header>
+
+    <script>
+        let banana = 'images/banana.png';
+        let frutilla = 'images/frutilla.png';
+        let manzana = 'images/manzana.png';
+        let uva = 'images/uva.png';
+        // Función con parametro por defecto
+        const crearIMG = function ( ruta='images/generica.png' ){
+            console.log(ruta)
+            let img = '<img src="'+  ruta + '" alt="Fruta" />';
+            document.write(img);
+
+        }
+
+        const sumar = function( n1, n2){
+            console.log('Inicio de la función');
+            let resultado = n1 + n2;
+            return resultado;   // Retorno un valor haca afuera de la función
+            console.log('Fin de la función');
+        }
+        crearIMG( banana);
+        crearIMG( frutilla);
+        crearIMG();
+        crearIMG( 'images/manzana.png');
+        crearIMG('images/uva.png')
+        crearIMG();
+        // let nombre = prompt('Nombre?');
+        let r = sumar(2,5);
+        document.write('<p>Resultado ' + r + '</p>');
+        // Recibe la nota y retorna el estado Desaprobado < 4, Aprobado nota entre 4 y 6 y Promocionado > 7
+        const obtenerEstado = function( nota ){
+            if( nota < 4 ){
+                return 'Desarobado 😥';
+            } else if( nota >= 4 && nota < 7 ) {
+                return 'Aprobado 😉';
+            } else {
+                return 'Promocionado 😁';  
+            }
+        }
+        
+        const mostrarNota = function( nombre, nota) {
+            let estado = obtenerEstado(nota);
+            document.write('<p>' +  nombre + ' | ' + nota + ' | ' + estado + '</p>');
+        }
+
+        let nombre;
+        let nota;
+        let continuar;
+        do {
+            nombre = prompt('Ingrese el nombre');
+            nota = +prompt('Ingrese la nota');
+            mostrarNota(nombre, nota);
+            continuar = confirm('¿Seguir ingresando alumnos?');
+        } while ( continuar == true )
+    </script>
 </body>
 </html>
