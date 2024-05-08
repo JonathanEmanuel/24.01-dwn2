@@ -13,8 +13,57 @@
     <main>
         <script>
             document.write('<h2> Clase 08</h2>');
+            let nombre = 'Juan';  // String
+            let edad = 24; // Number
+            let casado = false; // Boolean
 
+
+            console.log(  typeof(nombre) );
+            console.log(  typeof(edad) );
+            console.log(  typeof(casado) );
+
+            //let alumnos = new Array('Juan', 'Pedro');
+                          // 0       1       2         3    
+            let alumnos = ['Juan', 'Rocio', 'Lucas', 'Zoe'];
+            console.log( typeof( alumnos));
+            alumnos[1] = 'Emanuel'; // Remplazo un valor
+            alumnos[3] = 'Mailen'; // Agrego un valor
+            alumnos.push('Sebastian')  // Agrego un valor en el último lugar
+            alumnos.push('Julio');
+            alumnos.push('Ezequiel');
+            alumnos.push('Camila');
+
+            console.log(alumnos)
+            // Mostramos un elemento por posición
+            console.log(  alumnos[3]  )
+
+            document.write('<h2>Alumnos</h2>');
+            // Recorrer un array
+            let cantidad = alumnos.length;
+            console.log(cantidad)
+            for( let i=0; i<cantidad; i++ ){
+                document.write( '<p>' + alumnos[i] +'</p>');
+            }
             
+            document.write('<h2> Alumnos con FOR OF</h2>');
+            // 📌 Recorrido con un for of
+
+            // alumnos = [ "Juan", "Emanuel", "Lucas","Mailen","Sebastian","Julio","Ezequiel","Camila" ]
+            // var nueva     array
+            for(let item of alumnos){
+                document.write('<p>'+item+'</p>');
+            }
+            
+/*
+            document.write( '<p>' + alumnos[0] +'</p>');
+            document.write( '<p>' + alumnos[1] +'</p>');
+            document.write( '<p>' + alumnos[2] +'</p>');
+            document.write( '<p>' + alumnos[3] +'</p>');
+            document.write( '<p>' + alumnos[4] +'</p>');
+            document.write( '<p>' + alumnos[5] +'</p>');
+            document.write( '<p>' + alumnos[6] +'</p>');
+*/
+
         </script>
     </main>
     <footer>
