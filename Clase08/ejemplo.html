@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Arrays</h1>
+    </header>
+    <main>
+        <div>
+            <span style="color: red"> red</span>
+
+        </div>
+        <script>
+            
+            let colores = ['red', 'blue', 'green', 'pink', 'coral', 'tomato', 'slateblue', 'violet', 'hotpink', 'cadetblue'];
+
+            // 📌 Recorrido con for Clasico
+            for(let i=0; i< colores.length; i++){
+                document.write('<span style="color: '+colores[i]+'"> '+colores[i]+'</span>')
+            }
+
+            document.write('<hr>');
+
+            // 📌 Recorrido con for of
+            for( let item of colores){
+                document.write('<span style="color:' + item +' ">' + item +' </span>');
+            }
+        </script>
+    </main>
+    <footer>
+        <p> EMAE | Programación I | 2024</p>
+    </footer>
+</body>
+</html>
