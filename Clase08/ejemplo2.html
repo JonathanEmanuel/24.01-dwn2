@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Arrays</h1>
+    </header>
+    <main>
+
+        <script>
+            // Realizar un programa que solicite cinco alumnos y los guarde en un array 
+            let alumnos = [];  // creo el array vacio
+            // Cargo el array
+            for(let i=0; i<5; i++){
+                // Solicito el nombre
+                let nombre =  prompt('Ingrese el alumno');
+                // Agrego el alumno al array
+                alumnos.push( nombre );
+            }
+
+            console.log(alumnos);
+            // Recorremos el array y mostramos los datos
+            for(let i=0; i<alumnos.length; i++){
+                document.write('<p>'+ alumnos[i] + '</p>');
+            }
+
+        </script>
+    </main>
+    <footer>
+        <p> EMAE | Programación I | 2024</p>
+    </footer>
+</body>
+</html>

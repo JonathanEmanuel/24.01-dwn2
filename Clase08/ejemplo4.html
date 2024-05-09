@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Arrays</h1>
+    </header>
+    <main>
+        <script>
+            // Solicitar notas de alumnos hasta que se ingrese como nota -1
+            // Mostrar las notas de los alumnos
+            let notas = [];
+            let nota;
+            // Carga del array
+            do {
+                nota = +prompt('Ingrese la nota');
+                if( nota != -1){
+                    notas.push( nota );
+                }
+
+            } while( nota != -1)
+
+            // Recorrido del array
+            for(let i=0; i<notas.length; i++){
+                document.write('<p>' + notas[i] + '</p>');
+            }
+        </script>
+    </main>
+    <footer>
+        <p> EMAE | Programación I | 2024</p>
+    </footer>
+</body>
+</html>
