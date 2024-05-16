@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Arrays II - Métodos</h1>
+    </header>
+    <main>
+        <script>
+            //                 0         1        2         3        4
+            var alumnos = ['Jorge', 'Julieta', 'Marcelo', 'Lucas', 'Zoe'];
+            // 🟢 Agrego elemento al final
+            alumnos.push('Emanuel');
+            // Para remplazar
+            alumnos[2] = 'N';
+            // Agrego al inicio del array
+            alumnos.unshift('Rocio');
+
+        
+            document.write('<ol>');
+            for(var i=0; i<alumnos.length; i++){
+                document.write('<li>' + alumnos[i] + '</li>');
+            }
+            document.write('</ol>');
+
+            // 🔴 Eliminar el último
+            alumnos.pop();
+            // 🔴 Eliminar el primero
+            alumnos.shift();
+
+            // 🔴 Eliminar por posición 2 
+            alumnos.splice(2,1);
+
+
+            document.write('<hr>');
+            document.write('<h4>Sacar elementos</h4>');
+            document.write('<ol>');
+            for(var i=0; i<alumnos.length; i++){
+                document.write('<li>' + alumnos[i] + '</li>');
+            }
+            document.write('</ol>');
+
+            // Métodos para buscar dentro un array
+            // alumnos [ "Jorge", "Julieta", "Lucas", "Zoe" ]
+            // I: Para buscar un elemento y devuelve la posición
+            var pos = alumnos.findIndex( nombre => nombre == 'Zoe');
+            //var pos = alumnos.findIndex( function(item){ return item == 'Marcelo' });
+            console.log(pos)
+
+            /* Antes lo hacismo así
+            var posicion = -1; // Valor por defecto
+            for(var i=0; i<alumnos.length; i++){
+                if( alumnos[i] == 'Lucas'){ // Si existe el nombre
+                    posicion = i; // Actualizo la variable con la posición
+                }
+            }
+
+            console.log(posicion)
+            */
+            // II.  Para buscar un elemento y devuelve el elementos
+            var alumno = alumnos.find(  nombre => nombre == 'Julieta' );
+            console.log(alumno);
+
+            // III. Para buscar y obtener un booleano true || false
+            var encontrado = alumnos.includes('Lucas')
+            console.log(encontrado);
+
+            var nombre = prompt('Ingrese el nombre para buscar');
+            var existe = alumnos.includes(nombre);
+            if( existe) {
+                document.write('<p>Se encontro en la lista el alumno ' + nombre + '</p>');
+            } else {
+                document.write('<p>No se encontro el alumno ' + nombre + '</p>');
+            }
+        
+
+
+
+        </script>
+    </main>
+    <footer>
+        <p> EMAE | Programación I | 2024</p>
+    </footer>
+</body>
+</html>
