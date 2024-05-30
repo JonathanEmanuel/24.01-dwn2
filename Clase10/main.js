@@ -85,3 +85,18 @@ persona.mostrarLenguajes()
 
 persona2.saludar();
 persona2.mostrarEdad();
+
+/* ----------------------------------- DOM ---------------------------------- */
+const titulo = document.querySelector('h1');
+const parrafo = document.querySelector('.text-green');
+titulo.innerText = 'Objetos y DOM';
+
+let nombre = prompt('Ingresa tu nombre');
+// innerText inserta un texto
+parrafo.innerText = 'Hola ' + nombre;
+
+const card = document.querySelector('.card');
+// innerHTMl inserta etiquetas HTML
+card.innerHTML = '<h2> ' + nombre +'</h2>';
+//card.innerHTML = card.innerHTML + '<img src="icon.png" alt="Icono JavaScript">'
+card.innerHTML += '<img src="icon.png" alt="Icono JavaScript">'

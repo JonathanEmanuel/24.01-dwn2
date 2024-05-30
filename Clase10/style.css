@@ -32,3 +32,21 @@ footer {
     background-color: rgb(27, 27, 27);
     color: white;
 }
+
+.text-green {
+    color: teal;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 5px #000;
+
+}
