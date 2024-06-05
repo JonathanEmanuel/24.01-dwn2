@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Tareas</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icono.png" type="image/png">
+</head>
+<body>
+    <header class="bg-primary">
+        <img src="images/icono.png" alt="logo" class="logo">
+        <h1 class="text-white">App de Tareas</h1>
+    </header>
+    <main class="container">
+        <h2 class="text-center"> Bienvenido</h2>
+        <div class="row mt-2">
+            <div class="col">
+                <form action="" class="card p-3">
+                    <h4> Crear Tarea</h4>
+                    <textarea id="textTarea" class="form-control" rows="3"></textarea>
+                    <p id="textError" class="text-danger"></p>
+                    <button type="submit" class="btn btn-success mt-2"> Guardar</button>
+                </form>
+            </div>
+            <div class="col">
+                <h4>Tareas</h4>
+                <button id="btnCargar" type="button" class="btn btn-primary"> Cargar Tareas</button>
+                <button onclick="ingresarNombre()" type="button" class="btn btn-dark"> Ingresar</button>
+                <ul id="listTareas" class="list-group mt-2">
+                    <li class="list-group-item">
+                        <i class="fa-regular fa-clock"></i> Salir a caminar
+                    </li>
+                    <li class="list-group-item"> 
+                        <i class="fa-solid fa-check-to-slot"></i> Tomar mates 😉
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+    <footer class="bg-dark">
+        <p class="text-white"> EMAE | Programación I | 2024</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
