@@ -4,12 +4,48 @@ const textNombre = document.querySelector('#textNombre');
 const textTel = document.querySelector('#textTel');
 const textError = document.querySelector('#textError');
 const sCantidad = document.querySelector('#cantidad');
+const h3Usuario = document.querySelector('#h3Usuario');
+const btnSalir = document.querySelector('#btnSalir');
 
-const lista = [
-    { nombre: 'Jose', tel: '11-2222-3333' },
-    { nombre: 'Carla', tel: '11-5555-3333' },
+const pRojo = document.querySelector('#textRojo');
+const btnEliminarBorde = document.querySelector('#btnEliminarBorde');
+const btnModo = document.querySelector('#btnModo');
+const body = document.querySelector('body');
 
-];
+// Cuando abre la aplicación leemos los datos del localStorage
+let nombre = localStorage.getItem('usuario');
+h3Usuario.innerText = 'Hola ' + nombre;
+
+if( !nombre ){
+    location.href = 'login.html';
+}
+
+btnSalir.addEventListener('click', function(){
+    localStorage.removeItem('usuario');
+    location.href = 'login.html';
+})
+
+let modo = localStorage.getItem('modo');
+if( modo ) {
+    if( modo == 'dark'){
+        body.classList.add('dark');
+    } else {
+        body.classList.remove('dark');
+    }
+} else {
+    body.classList.remove('dark');
+}
+
+let lista = [];
+let datoGuardados = JSON.parse( localStorage.getItem('contactos') );
+if( datoGuardados) {
+    lista = datoGuardados;
+} else {
+    lista = [];
+}
+
+
+
 let posicion = -1;
 sCantidad.innerText = lista.length;
 /* ----------------------- FUNCION 01 - CREAR CONTACTO ---------------------- */
@@ -41,6 +77,9 @@ formulario.addEventListener('submit', function(evento) {
         // Actualizo el indicador de cantidad
         sCantidad.innerText = lista.length;
 
+        // Guardo la lista 
+        const arrayString = JSON.stringify(lista);
+        localStorage.setItem('contactos', arrayString);
     }
 
 })
@@ -86,6 +125,10 @@ function eliminar(i){
 
     // Actualizo el indicador de cantidad
     sCantidad.innerText = lista.length;
+
+    // Guardo la lista 
+    const arrayString = JSON.stringify(lista);
+    localStorage.setItem('contactos', arrayString);
 }
 
 /* --------------------------- FUNCION 04 - EDITAR -------------------------- */
@@ -96,6 +139,10 @@ function editar(i){
 
     textNombre.value = nombre;
     textTel.value = tel;
+
+    // Guardo la lista 
+    const arrayString = JSON.stringify(lista);
+    localStorage.setItem('contactos', arrayString);
 }
 
 
@@ -114,10 +161,7 @@ renderizarContactos(lista);
 
 
 /* ------------------- EDICIÓN DE ESTILOS DESDE JAVASCRIPT ------------------ */
-const pRojo = document.querySelector('#textRojo');
-const btnEliminarBorde = document.querySelector('#btnEliminarBorde');
-const btnModo = document.querySelector('#btnModo');
-const body = document.querySelector('body');
+
 
 pRojo.addEventListener('click', function(){
     // Para agregar una clase css utilizamos .classList.add('nombreClase');
@@ -132,6 +176,11 @@ btnEliminarBorde.addEventListener('click', function(){
 btnModo.addEventListener('click', function(){
     // Si la clase exite la remueve y si no existe la agrega
     body.classList.toggle('dark');
+    if ( body.classList.contains('dark') == true){
+        localStorage.setItem('modo', 'dark');
+    } else {
+        localStorage.setItem('modo', 'white');
+    }
 })
 
 function agregarZoom( elemento ){
